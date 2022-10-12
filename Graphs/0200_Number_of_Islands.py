@@ -9,7 +9,7 @@ class Solution:
     
     def bfs(r,c):
       q = collections.deque()
-      visit.add(r, c) # adding to visit to mark as visited
+      visit.add((r, c)) # adding to visit to mark as visited
       q.append((r, c))
       
       while q:
@@ -22,7 +22,7 @@ class Solution:
               grid[r + dr][c + dc] == "1" and 
               (r + dr, c + dc) not in visit):
             q.append((r+dr, c+dc))
-            visit.append((r+dr, c+dc))
+            visit.add((r+dr, c+dc))
         
     for r in range(rows):
       for c in range(cols):
